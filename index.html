@@ -7,8 +7,28 @@
   <script src="app.js"></script>
 </head>
 <body ng-app="rap-duel" ng-controller="MainCtrl">
-  <div>
-    {{test}}
-  </div>
-</body>
-</html>
+  <div ng-repeat="battle in battles">
+    <a ng-show="battle.title" href="{{battle.title}}">
+      {{battle.title}}
+    </a>
+    {{battle.user_name1}}: {{battle.audio1_Url}} {{battle.user_name2}}: {{battle.audio2_Url}}
+    <span ng-hide="battle.title">
+      {{battle.title}}
+      <span>
+      </div>
+      <br>
+      <form ng-submit="addBattle()">
+        <input type="text" placeholder="Battle Name" ng-model="title" />
+        <br>
+        <input type="text" placeholder="Rapper 1" ng-model="user_name1" />
+        <br>
+        <input type="text" placeholder="Diss 1" ng-model="audio1_Url" />
+        <br>
+        <input type="text" placeholder="Rapper 2" ng-model="user_name2" />
+        <br>
+        <input type="text" placeholder="Diss 2" ng-model="audio2_Url" />
+        <br>
+        <button type="submit">Battle!</button>
+      </form>
+    </body>
+    </html>
