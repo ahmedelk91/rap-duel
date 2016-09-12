@@ -3,39 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <title>Rap Duel</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
   <script src="app.js"></script>
 </head>
 <body ng-app="rap-duel" ng-controller="MainCtrl">
-  <div ng-repeat="battle in battles">
-    <a ng-show="battle.title" href="{{battle.title}}">
-      {{battle.title}}
+  <script type="text/ng-template" id="'/home.html'">
+    <div class="page-header">
+      <h1>Rap Duel</h1>
+    </div>
+    <span>
+      <a href="#/users/{{$index}}">Battles</a>
+    </span>
+  </script>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <ui-view></ui-view>
+    </div>
+  </div>
+  <div ng-repeat="user in users">
+    <br>
+    <a ng-show="user.title" href="{{user.title}}">
+      {{user.rap_name}}
     </a>
-    {{battle.user_name1}}: {{battle.audio1_Url}} {{battle.user_name2}}: {{battle.audio2_Url}}
-    <span ng-hide="battle.title">
-      {{battle.title}}
-      <span>
-      </div>
-      <br>
-      <form ng-submit="addBattle()">
-        <input type="text" placeholder="Battle Name" ng-model="title" />
-        <br>
-        <input type="text" placeholder="Rapper 1" ng-model="user_name1" />
-        <br>
-        <input type="text" placeholder="Diss 1" ng-model="audio1_Url" />
-        <br>
-        <input type="text" placeholder="Rapper 2" ng-model="user_name2" />
-        <br>
-        <input type="text" placeholder="Diss 2" ng-model="audio2_Url" />
-        <br>
-        <button type="submit">Battle!</button>
-      </form>
+    {{user.rap_name}}
+    <br>
+    <img ng-src="{{user.image_url}}" />
+    <br>
+    City: {{user.city}}
+    <br>
+    Description: {{user.description}}
+    <span ng-hide="user.title">
+    {{user.rap_name}}
+    <span>
+    <br>
+  </div>
+  <br>
+  <form ng-submit="addUser()">
+    <input type="text" placeholder="Rap Name" ng-model="rap_name" />
+    <br>
+    <input type="text" placeholder="Photo" ng-model="image_url" />
+    <br>
+    <input type="text" placeholder="City" ng-model="city" />
+    <br>
+    <input type="text" placeholder="Description" ng-model="description" />
+    <br>
+    <button type="submit">New Rapper</button>
+  </form>
 
-      <script type="text/ng-template" id="'/home.html'">
-        <div class="page-header">
-          <h1>Rap Duel</h1>
-        </div>
-      </script>
-    </body>
-    </html>
+  <script type="text/ng-template" id="/users.html">
+    <div class="page-header">
+      <h3>
+        <a ng-show="user.rap_name" href="{{user.rap_name}}">
+          {{user.rap_name}}
+        </a>
+        <span ng-hide="user.rap_name">
+          {{user.rap_name}}
+        </span>
+      </h3>
+    </div>
+
+    <div ng-repeat="battle in battle.users">
+      <span style="font-size:20px; margin-left:10px;">
+        {{battle.body}}
+      </span>
+    </div>
+    <form ng-submit="addBattle()"
+    style="margin-top:30px;">
+    <h3>Battles</h3>
+    <div class="form-group">
+      <input type="text"
+      class="form-control"
+      placeholder="Battle Name"
+      ng-model="title" />
+      <input type="text"
+      class="form-control"
+      placeholder="Challenger"
+      ng-model="challenger_name" />
+      <input type="text"
+      class="form-control"
+      placeholder="Challenger Diss"
+      ng-model="audio1_Url" />
+      <input type="text"
+      class="form-control"
+      placeholder="Response"
+      ng-model="audio2_Url" />
+    </div>
+    <button type="submit" class="btn btn-primary">Battle!</button>
+  </form>
+</script>
+</body>
+</html>
