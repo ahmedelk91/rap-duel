@@ -4,7 +4,7 @@
   </div>
   <div ng-repeat="user in users">
     <br>
-    <a href="users/{{user.id}}">{{user.rap_name}}</a>
+    <a ui-sref="user">{{user.rap_name}}</a>
     <br>
     <img ng-src="{{user.image_url}}" />
     <br>

@@ -1,16 +1,14 @@
-
+<h1> Jello World!!! </h1>
 <div class="page-header">
   <h3>
-    <a ng-show="user.rap_name" href="{{user.rap_name}}">
       {{user.rap_name}}
-    </a>
-    <span ng-hide="user.rap_name">
-      {{user.rap_name}}
-    </span>
   </h3>
 </div>
 
 <div ng-repeat="battle in battle.users">
+  <span>
+    <a href="#/users/{{$index}}">Battles</a>
+  </span>
   <span style="font-size:20px; margin-left:10px;">
     {{battle.body}}
   </span>
