@@ -71,7 +71,6 @@
     /**********************CONTROLLER FUNCTIONS******************************/
     function usersControllerFunction($scope, users)
     {
-      console.log("im in the muthafuckin controller");
       $scope.users = users.users;
       //hardcoded data
       $scope.users = [
