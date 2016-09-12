@@ -3,26 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <title>Rap Duel</title>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
   <script src="app.js"></script>
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body ng-app="rap-duel" ng-controller="MainCtrl">
-  <script type="text/ng-template" id="'/home.html'">
+
+<body ng-app="rap-duel">
+  <!-- ng-controller="MainCtrl"> -->
+  <!-- <script type="text/ng-template" id="'/home.html'">
     <div class="page-header">
       <h1>Rap Duel</h1>
     </div>
+  </script> -->
     <span>
       <a href="#/users/{{$index}}">Battles</a>
     </span>
-  </script>
+
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <ui-view></ui-view>
     </div>
   </div>
-  <div ng-repeat="user in users">
+  <!-- <div ng-repeat="user in users">
     <br>
     <a ng-show="user.title" href="{{user.title}}">
       {{user.rap_name}}
@@ -38,8 +42,8 @@
     {{user.rap_name}}
     <span>
     <br>
-  </div>
-  <br>
+  </div> -->
+  <!-- <br>
   <form ng-submit="addUser()">
     <input type="text" placeholder="Rap Name" ng-model="rap_name" />
     <br>
@@ -50,9 +54,9 @@
     <input type="text" placeholder="Description" ng-model="description" />
     <br>
     <button type="submit">New Rapper</button>
-  </form>
+  </form> -->
 
-  <script type="text/ng-template" id="/users.html">
+  <!-- <script type="text/ng-template" id="/users.html">
     <div class="page-header">
       <h3>
         <a ng-show="user.rap_name" href="{{user.rap_name}}">
@@ -92,6 +96,6 @@
     </div>
     <button type="submit" class="btn btn-primary">Battle!</button>
   </form>
-</script>
+</script> -->
 </body>
 </html>

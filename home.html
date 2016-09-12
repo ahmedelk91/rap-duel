@@ -1,0 +1,30 @@
+
+  <div class="page-header">
+    <h1>Rap Duel</h1>
+  </div>
+  <div ng-repeat="user in users">
+    <br>
+    <a href="users/{{user.id}}">{{user.rap_name}}</a>
+    <br>
+    <img ng-src="{{user.image_url}}" />
+    <br>
+    City: {{user.city}}
+    <br>
+    Description: {{user.description}}
+    <span ng-hide="user.title">
+    {{user.rap_name}}
+    <span>
+    <br>
+  </div>
+  <br>
+  <form ng-submit="addUser()">
+    <input type="text" placeholder="Rap Name" ng-model="rap_name" />
+    <br>
+    <input type="text" placeholder="Photo" ng-model="image_url" />
+    <br>
+    <input type="text" placeholder="City" ng-model="city" />
+    <br>
+    <input type="text" placeholder="Description" ng-model="description" />
+    <br>
+    <button type="submit">New Rapper</button>
+  </form>

@@ -1,0 +1,40 @@
+
+<div class="page-header">
+  <h3>
+    <a ng-show="user.rap_name" href="{{user.rap_name}}">
+      {{user.rap_name}}
+    </a>
+    <span ng-hide="user.rap_name">
+      {{user.rap_name}}
+    </span>
+  </h3>
+</div>
+
+<div ng-repeat="battle in battle.users">
+  <span style="font-size:20px; margin-left:10px;">
+    {{battle.body}}
+  </span>
+</div>
+<form ng-submit="addBattle()"
+style="margin-top:30px;">
+<h3>Battles</h3>
+<div class="form-group">
+  <input type="text"
+  class="form-control"
+  placeholder="Battle Name"
+  ng-model="title" />
+  <input type="text"
+  class="form-control"
+  placeholder="Challenger"
+  ng-model="challenger_name" />
+  <input type="text"
+  class="form-control"
+  placeholder="Challenger Diss"
+  ng-model="audio1_Url" />
+  <input type="text"
+  class="form-control"
+  placeholder="Response"
+  ng-model="audio2_Url" />
+</div>
+<button type="submit" class="btn btn-primary">Battle!</button>
+</form>
