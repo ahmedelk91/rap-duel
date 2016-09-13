@@ -60,6 +60,7 @@
       '$stateParams',
       usersControllerFunction
     ])
+    
     .controller("showUserCtrl", [
       "$scope",
       "users",
@@ -147,20 +148,20 @@
               {
                 $scope.user = users.users[$stateParams.id];
                 console.log(user.id);
-                // $scope.addBattle = function()
-                // {
-                //   if($scope.title === '') {return;}
-                //   $scope.user.battles.push({
-                //                             title: $scope.title,
-                //                             challenger_name: 'user',
-                //                             audio1_Url: $scope.audio1_Url,
-                //                             audio2_Url: $scope.audio2_Url
-                //                           });
-                //   $scope.title = '';
-                //   $scope.challenger_name = '';
-                //   $scope.audio1_Url = '';
-                //   $scope.audio2_Url = '';
-                // };
+                $scope.addBattle = function()
+                {
+                  if($scope.title === '') {return;}
+                  $scope.user.battles.push({
+                                            title: $scope.title,
+                                            challenger_name: 'user',
+                                            audio1_Url: $scope.audio1_Url,
+                                            audio2_Url: $scope.audio2_Url
+                                          });
+                  $scope.title = '';
+                  $scope.challenger_name = '';
+                  $scope.audio1_Url = '';
+                  $scope.audio2_Url = '';
+                };
               }
 
 
