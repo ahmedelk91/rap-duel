@@ -1,0 +1,9 @@
+<h2>Rappers</h2>
+<br>
+<div data-ng-repeat="user in UserIndexViewModel.users">
+  <!-- <p>{{user.rap_name}}</p>
+  <p><img src="{{user.image_url}}" alt="rap-duel" /></p> -->
+  <p><a data-ui-sref="userShow({id: user.id})">{{user.rap_name}}</a></p>
+  <br>
+</div>
+<a data-ui-sref="userNew">New Rapper</a>
