@@ -3,12 +3,10 @@
 (function(){
   angular
   .module( "users" )
-  .controller( "UserNewController", "BattleNewController" [
+  .controller( "UserNewController",  [
     "UserFactory",
-    "BattleFactory",
     "$state",
     UserNewControllerFunction,
-    BattleNewControllerFunction
   ]);
 
   function UserNewControllerFunction(UserFactory, $state){
@@ -18,13 +16,6 @@
       vm.user.$save().then(function(){
         $state.go("userIndex")
       })
-    }
-  }
-
-  function BattleNewControllerFunction(BattleFactory){
-    this.battle = new BattleFactory();
-    this.create = function(){
-      this.battle.$save()
     }
   }
 }());

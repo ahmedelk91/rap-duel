@@ -33,12 +33,12 @@
       controller: "UserEditController",
       controllerAs: "UserEditViewModel"
     })
-    .state('battleNew', {
-      url: "users/:id/",
-      templateUrl: 'js/users/show.html',
-      controller: "BattleNewController",
-      controllerAs: "BattleShowViewModel"
-    })
+    // .state('battleNew', {
+    //   url: "users/:id/",
+    //   templateUrl: 'js/users/show.html',
+    //   controller: "BattleNewController",
+    //   controllerAs: "BattleShowViewModel"
+    // })
     .state('userShow', {
       url: "/users/:id",
       templateUrl: 'js/users/show.html',
