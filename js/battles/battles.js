@@ -2,8 +2,7 @@
 
 (function(){
   angular
-  .module("users", [
+  .module( "battles", [
     "ngResource"
   ]);
-  
 }());

@@ -1,0 +1,14 @@
+<h2>Edit Rapper</h2>
+
+<form>
+  <input value="{{UserEditViewModel.user.rap_name}}" data-ng-model="UserEditViewModel.user.rap_name"/>
+  <br>
+  <input value="{{UserEditViewModel.user.image_url}}" data-ng-model="UserEditViewModel.user.image_url"/>
+  <br>
+  <input value="{{UserEditViewModel.user.city}}" data-ng-model="UserEditViewModel.user.city"/>
+  <br>
+  <input value="{{UserEditViewModel.user.description}}" data-ng-model="UserEditViewModel.user.description"/>
+  <br>
+  <button type="Submit" data-ng-click="UserEditViewModel.update()">Change Yo Style Up</button>
+  <button data-ng-click="UserEditViewModel.destroy()">Fall Off</button>
+</form>

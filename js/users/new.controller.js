@@ -3,15 +3,28 @@
 (function(){
   angular
   .module( "users" )
-  .controller( "UserNewController", [
+  .controller( "UserNewController", "BattleNewController" [
     "UserFactory",
-    UserNewControllerFunction
+    "BattleFactory",
+    "$state",
+    UserNewControllerFunction,
+    BattleNewControllerFunction
   ]);
 
-  function UserNewControllerFunction(UserFactory){
-    this.user = new UserFactory();
+  function UserNewControllerFunction(UserFactory, $state){
+    var vm = this;
+    vm.user = new UserFactory();
+    vm.create = function(){
+      vm.user.$save().then(function(){
+        $state.go("userIndex")
+      })
+    }
+  }
+
+  function BattleNewControllerFunction(BattleFactory){
+    this.battle = new BattleFactory();
     this.create = function(){
-      this.user.$save()
+      this.battle.$save()
     }
   }
 }());

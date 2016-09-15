@@ -3,3 +3,25 @@
 <br>
 <p><dfn>City: </dfn>{{UserShowViewModel.user.city}}</p>
 <blockquote>{{UserShowViewModel.user.description}}</blockquote>
+
+<br>
+<div ng-repeat="battle in battle.users">
+  <span>
+    <a href="#/users/{{$index}}">Battles</a>
+  </span>
+  <span style="font-size:20px; margin-left:10px;">
+    {{battle.title}}
+  </span>
+</div>
+<form ng-submit="addBattle()"
+style="margin-top:30px;">
+<h3>Battles</h3>
+<div class="form-group">
+  <input type="text" class="form-control" placeholder="Battle Name" ng-model="title" />
+  <input type="text" class="form-control" placeholder="Challenger" ng-model="challenger_name" />
+  <input type="text" class="form-control" placeholder="Challenger Diss" ng-model="audio1_Url" />
+  <input type="text" class="form-control" placeholder="Response" ng-model="audio2_Url" />
+</div>
+<button class="btn btn-primary" data-ng-click="battleNew">Battle!</button>
+<a data-ui-sref="battleEdit({id: battle.id})">Respond</a>
+</form>
