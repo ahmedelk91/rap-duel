@@ -4,6 +4,7 @@
   angular.module("rap-duel", [
     'ui.router',
     'users',
+    // 'welcomePage'
   ])
 
   /**************CONFIG STATE DEFINITIONS*****************/
@@ -14,6 +15,12 @@
 
   function RouterFunction($stateProvider){
     $stateProvider
+    // .state('welcome', {
+    //   url: '/',
+    //   templateUrl: 'js/users/welcome.html',
+    //   controller: "WelcomeShowController",
+    //   controllerAs:"WelcomeViewModel"
+    // })
     .state('userIndex', {
       url: '/users',
       templateUrl: 'js/users/index.html',
@@ -27,24 +34,25 @@
       controller: "UserNewController",
       controllerAs: "UserNewViewModel"
     })
+    .state('userShow', {
+      url: "/users/:id",
+      templateUrl: 'js/users/show.html',
+      controller: "UserShowController",
+      controllerAs: "UserShowViewModel"
+    })
     .state('userEdit', {
       url: "users/:id/edit/",
       templateUrl: 'js/users/edit.html',
       controller: "UserEditController",
       controllerAs: "UserEditViewModel"
     })
+    // RouterFunction.otherwise('home');
     // .state('battleNew', {
     //   url: "users/:id/",
     //   templateUrl: 'js/users/show.html',
     //   controller: "BattleNewController",
     //   controllerAs: "BattleShowViewModel"
     // })
-    .state('userShow', {
-      url: "/users/:id",
-      templateUrl: 'js/users/show.html',
-      controller: "UserShowController",
-      controllerAs: "UserShowViewModel"
-    });
     // .state('battleEdit', {
     //   url: "users/:id/battles/",
     //   templateUrl: "js/battles/edit.html",
@@ -54,7 +62,6 @@
   }
 }());
 
-// RouterFunction.otherwise('home');
 //
 // .state('home', {
 //   url: '/home',

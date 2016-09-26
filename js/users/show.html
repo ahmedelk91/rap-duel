@@ -1,9 +1,9 @@
-<h2>{{UserShowViewModel.user.rap_name}}</h2>
-<img data-ng-src="{{UserShowViewModel.user.image_url}}" />
-<br>
-<p><dfn>City: </dfn>{{UserShowViewModel.user.city}}</p>
-<blockquote>{{UserShowViewModel.user.description}}</blockquote>
-
+<h2 class="main-font">{{UserShowViewModel.user.rap_name}}</h2>
+<p class="sub-heading"><dfn>City: </dfn>{{UserShowViewModel.user.city}}</p>
+<div>
+<p><img data-ng-src="{{UserShowViewModel.user.image_url}}" />
+<blockquote class="main-font">{{UserShowViewModel.user.description}}</blockquote></p>
+</div>
 <br>
 <div ng-repeat="battle in battle.users">
   <span>
@@ -15,7 +15,7 @@
 </div>
 <form ng-submit="addBattle()"
 style="margin-top:30px;">
-<h3>Battles</h3>
+<h3 class="">Battles</h3>
 <div class="form-group">
   <input type="text" class="form-control" placeholder="Battle Name" ng-model="title" />
   <input type="text" class="form-control" placeholder="Challenger" ng-model="challenger_name" />

@@ -1,11 +1,15 @@
-<h2>Rappers</h2>
-<a data-ui-sref="userNew">New Rapper</a>
+<!-- <h2 class="sub-heading">Rappers</h2> -->
+<a data-ui-sref="userNew" class="main-font">New Rapper</a>
 
 <br>
-<div data-ng-repeat="user in UserIndexViewModel.users">
-  <p><a data-ui-sref="userShow({id: user.id})">{{user.rap_name}}</a></p>
-  <!-- <p>{{user.rap_name}}</p> -->
-  <p><img src="{{user.image_url}}" alt="<img src="http://placehold.it/350x150" /> </p>
-  <a data-ui-sref="userEdit({id: user.id})">Edit</a>
-  <br>
-</div>
+<div class="row">
+  <div class=".col-md-4">
+    <div data-ng-repeat="user in UserIndexViewModel.users" class="main-font">
+      <p><a data-ui-sref="userShow({id: user.id})">{{user.rap_name}}</a> |
+        <a data-ui-sref="userEdit({id: user.id})">Edit</a></p>
+        <!-- <p>{{user.rap_name}}</p> -->
+        <p><img src="{{user.image_url}}" alt="<img src="http://placehold.it/350x150" class="img-rounded" /> </p>
+        <br>
+      </div>
+    </div>
+  </div>
