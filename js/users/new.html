@@ -1,0 +1,13 @@
+<h2>New Rapper</h2>
+
+<form>
+  <input placeholder="Rap Name" data-ng-model="UserNewViewModel.user.rap_name" />
+  <br>
+  <input placeholder="Photo" data-ng-model="UserNewViewModel.user.image_url" />
+  <br>
+  <input placeholder="City" data-ng-model="UserNewViewModel.user.city" />
+  <br>
+  <textarea placeholder="Description" data-ng-model="UserNewViewModel.user.description" /></textarea>
+  <br>
+  <button type="button" data-ng-click="UserNewViewModel.create()">New Rapper</button>
+</form>
