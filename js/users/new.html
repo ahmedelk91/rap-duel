@@ -1,13 +1,14 @@
 <h2 class="sub-heading">New Rapper</h2>
-
 <form>
-  <input placeholder="Rap Name" data-ng-model="UserNewViewModel.user.rap_name" />
-  <br>
-  <input placeholder="Photo" data-ng-model="UserNewViewModel.user.image_url" />
-  <br>
-  <input placeholder="City" data-ng-model="UserNewViewModel.user.city" />
-  <br>
-  <textarea placeholder="Description" data-ng-model="UserNewViewModel.user.description" /></textarea>
-  <br>
-  <button type="button" data-ng-click="UserNewViewModel.create()">New Rapper</button>
+  <div class="form-group">
+    <input class="form-control" placeholder="Rap Name" data-ng-model="UserNewViewModel.user.rap_name" />
+    <br>
+    <input class="form-control" placeholder="Photo" data-ng-model="UserNewViewModel.user.image_url" />
+    <br>
+    <input class="form-control" placeholder="City" data-ng-model="UserNewViewModel.user.city" />
+    <br>
+    <textarea class="form-control" placeholder="Description" data-ng-model="UserNewViewModel.user.description" /></textarea>
+    <br>
+    <button class="btn btn-primary" type="button" data-ng-click="UserNewViewModel.create()">New Rapper</button>
+  </div>
 </form>

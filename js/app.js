@@ -15,18 +15,11 @@
 
   function RouterFunction($stateProvider){
     $stateProvider
-    // .state('welcome', {
-    //   url: '/',
-    //   templateUrl: 'js/users/welcome.html',
-    //   controller: "WelcomeShowController",
-    //   controllerAs:"WelcomeViewModel"
-    // })
     .state('userIndex', {
       url: '/users',
       templateUrl: 'js/users/index.html',
       controller: 'UserIndexController',
       controllerAs: "UserIndexViewModel"
-      /*********** DEFINE SIGNUP CONTROLLER LATER *******/
     })
     .state("userNew", {
       url: "/users/new",
@@ -41,26 +34,26 @@
       controllerAs: "UserShowViewModel"
     })
     .state('userEdit', {
-      url: "users/:id/edit/",
+      url: "/users/:id/edit",
       templateUrl: 'js/users/edit.html',
       controller: "UserEditController",
       controllerAs: "UserEditViewModel"
     })
-    // RouterFunction.otherwise('home');
-    // .state('battleNew', {
-    //   url: "users/:id/",
-    //   templateUrl: 'js/users/show.html',
-    //   controller: "BattleNewController",
-    //   controllerAs: "BattleShowViewModel"
-    // })
-    // .state('battleEdit', {
-    //   url: "users/:id/battles/",
-    //   templateUrl: "js/battles/edit.html",
-    //   controller: "BattleEditController",
-    //   controllerAs: "BattleEditViewModel"
-    // })
   }
 }());
+// RouterFunction.otherwise('home');
+// .state('battleNew', {
+//   url: "users/:id/",
+//   templateUrl: 'js/users/show.html',
+//   controller: "BattleNewController",
+//   controllerAs: "BattleShowViewModel"
+// })
+// .state('battleEdit', {
+//   url: "users/:id/battles/",
+//   templateUrl: "js/battles/edit.html",
+//   controller: "BattleEditController",
+//   controllerAs: "BattleEditViewModel"
+// })
 
 //
 // .state('home', {

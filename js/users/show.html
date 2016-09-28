@@ -1,10 +1,3 @@
-<h2 class="main-font">{{UserShowViewModel.user.rap_name}}</h2>
-<p class="sub-heading"><dfn>City: </dfn>{{UserShowViewModel.user.city}}</p>
-<div>
-<p><img data-ng-src="{{UserShowViewModel.user.image_url}}" />
-<blockquote class="main-font">{{UserShowViewModel.user.description}}</blockquote></p>
-</div>
-<br>
 <div ng-repeat="battle in battle.users">
   <span>
     <a href="#/users/{{$index}}">Battles</a>
@@ -15,7 +8,7 @@
 </div>
 <form ng-submit="addBattle()"
 style="margin-top:30px;">
-<h3 class="">Battles</h3>
+<h3 class="sub-heading">{{user.id}}'s Battles</h3>
 <div class="form-group">
   <input type="text" class="form-control" placeholder="Battle Name" ng-model="title" />
   <input type="text" class="form-control" placeholder="Challenger" ng-model="challenger_name" />
@@ -23,5 +16,5 @@ style="margin-top:30px;">
   <input type="text" class="form-control" placeholder="Response" ng-model="audio2_Url" />
 </div>
 <button class="btn btn-primary" data-ng-click="battleNew">Battle!</button>
-<a data-ui-sref="battleEdit({id: battle.id})">Respond</a>
+<button class="btn btn-primary" data-ng-click="battleEdit({id: battle.id})">Respond</button>
 </form>
